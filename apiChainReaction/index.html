@@ -4,15 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>weather time</title>
 </head>
 <body>
-  <img id = "primaryArt" alt="Girl in a jacket" width="100%">
-  <img id="pokeImage" alt="pokeName" width="100%">
-  <h3 id="poemLine"></h3>
-  <h3 id="pokePersonality"></h3>
-  <h3 id="pokeName"></h3>
-  
-  <script src="weatherScript.js"></script>
+  <div class="cardAttr">
+    <ul class="verticalStack">
+      <li class="verticalItem">
+        <img id = "primaryArt" alt="art from the MET">
+      </li>
+      <li class="verticalItem">
+          <img id="pokeImage" alt="pokeName" class="pokemonImg">
+      </li>
+      <li class="verticalItem">
+        <h2 id="pokeName"></h2>
+      </li>
+       <li class="verticalItem">
+         <h3 id="pokePersonality"></h3>
+      </li>
+      <li class="verticalItem">
+        <h4 id="poemLine"></h4>
+      </li>
+    </ul>
+  </div>
+<script src="weatherScript.js"></script>
 </body>
 </html>

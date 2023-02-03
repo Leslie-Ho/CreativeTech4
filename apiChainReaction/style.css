@@ -1,0 +1,76 @@
+@import url(type.css);
+@import url(colors.css);
+
+body {
+    margin: 0px;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.cardAttr {
+    background-color: var(--backgroundGreen);
+    box-shadow: -4px 4px 8px var(--shadowColor);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+
+    width: 700px;
+
+    padding:32px;
+    gap: 0px;
+    width: 540px;
+    margin: auto;
+    background-color: rgba(155, 155, 155, 0.7);
+}
+
+.verticalStack{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    list-style: none;
+    
+    padding: 0px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.verticalItem {
+    /* width: 24px; */
+    /* height: 24px; */
+    margin: 0px;
+    
+    flex: none;
+}
+
+.horizontallStack{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    list-style: none;
+    
+    padding: 0px;
+    flex: none;
+    /* order: 2; */
+    flex-grow: 0;
+}
+
+.horizontalItem {
+    /* width: 24px; */
+    /* height: 24px; */
+    margin: 0px 0px;
+    
+    flex: none;
+}
+
+img{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.pokemonImg{
+    width: 120px;
+    height: 120px;
+}

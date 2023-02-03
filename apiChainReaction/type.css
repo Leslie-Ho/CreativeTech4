@@ -1,0 +1,38 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Righteous&display=swap');;
+
+h1 {
+font-family: 'Righteous', cursive;
+font-style: normal;
+font-weight: 400;
+color: white;
+}
+
+h2, h3, h4 {
+    font-family: 'Fredoka', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: white;
+    margin: 16px;
+}
+
+h1 {
+    font-size: 96px;
+    line-height: 104px;
+}
+
+h2 {
+    font-size: 60px;
+    line-height: 60px;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 28px;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 16px;
+}

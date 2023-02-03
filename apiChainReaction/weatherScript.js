@@ -18,6 +18,7 @@ function searchWeather(searchTerm) {
         searchMetMuseum(result.weather[0].description)
         
     })
+    document.body.style.backgroundImage = 'url("https://steamuserimages-a.akamaihd.net/ugc/1758073114103109159/20B042641BF6359FEE0D9E96CE7D62205EB179A3/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false")'
 }
 
 function searchPokemon(searchTerm) {
@@ -27,6 +28,7 @@ function searchPokemon(searchTerm) {
         }
     windDegree /= 12;
     console.log(Math.floor(windDegree).toString())
+    windDegree = Math.floor(windDegree).toString()
 
     let cloudDensity = searchTerm.clouds.all;
     if(cloudDensity < 10) {
@@ -151,6 +153,8 @@ function setTime() {
     document.getElementById('time').innerHTML = hours + ":" + minute + timeOfDay;
 }
 
-window.onload = setTime();
+// triggerButton.addEventListener("click", searchWeather(currentZip))
+
 searchWeather(currentZip);
-setInterval(setTime, 1000);
+//window.onload = setTime();
+//setInterval(setTime, 1000);
