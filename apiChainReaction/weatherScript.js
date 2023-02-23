@@ -1,5 +1,5 @@
 const d = new Date();
-const triggerButton = document.getElementById('initTrigger')
+//const triggerButton = document.getElementById('refreshTrigger')
 
 let minutes = d.getMinutes();
 
@@ -13,7 +13,7 @@ function searchWeather(searchTerm) {
         //console.log(result.json);
         return result.json();
     }).then(result => {
-        console.log(result.weather[0].description)
+        console.log("weather description: " + result.weather[0].description)
         searchPokemon(result)
         searchMetMuseum(result.weather[0].description)
         
@@ -26,8 +26,8 @@ function searchPokemon(searchTerm) {
         if(windDegree < 12) {
             windDegree = 12;
         }
+    console.log("wind Degree: " + windDegree);
     windDegree /= 12;
-    console.log(Math.floor(windDegree).toString())
     windDegree = Math.floor(windDegree).toString()
 
     let cloudDensity = searchTerm.clouds.all;
@@ -36,6 +36,7 @@ function searchPokemon(searchTerm) {
     }
     cloudDensity /= 10;
     cloudDensity = Math.ceil(cloudDensity).toString();
+    console.log("cloud density: " + cloudDensity);
 
     fetch('https://pokeapi.co/api/v2/characteristic/' + windDegree, {
         method: 'GET',
@@ -46,7 +47,7 @@ function searchPokemon(searchTerm) {
     .then(response => response.json())
     .then(response => {
         let pokePersonality = response.descriptions[7].description;
-        console.log(pokePersonality)
+        console.log("pokemon personality: " + pokePersonality)
         document.getElementById('pokePersonality').innerHTML = pokePersonality
     })
 
@@ -62,7 +63,7 @@ function searchPokemon(searchTerm) {
         let pokemonSpecies = response.pokemon_species.length;
         let randNum = Math.floor(Math.random() * pokemonSpecies);
         let pokeName = response.pokemon_species[randNum].name;
-        console.log(pokeName)
+        console.log("pokemon name: " + pokeName)
         document.getElementById('pokeName').innerHTML = pokeName;
         
         fetch('https://pokeapi.co/api/v2/pokemon/' + pokeName, {
@@ -74,7 +75,7 @@ function searchPokemon(searchTerm) {
         .then(response => response.json())
         .then(response => {
             //get Pokemon image
-            console.log(response.sprites.front_default)
+            //console.log(response.sprites.front_default)
             document.getElementById("pokeImage").src=response.sprites.front_default;
 
         })
@@ -105,6 +106,7 @@ function searchMetMuseum(searchTerm) {
             document.getElementById("primaryArt").src=response.primaryImage;
 
             let accessionYear = parseInt(response.accessionYear);
+            console.log("assessed year: " + accessionYear);
             let yearSinceAccession = (currentYear - accessionYear).toString();
             fetch('https://poetrydb.org/linecount/' + yearSinceAccession, {
                 method: 'GET',
@@ -116,7 +118,7 @@ function searchMetMuseum(searchTerm) {
             .then(response => {
                 let poemCount = response.length;
                 let randPoem = Math.floor(Math.random() * poemCount)
-                console.log(response[randPoem].lines[0]);
+                console.log("first line of poem: " + response[randPoem].lines[0]);
                 document.getElementById('poemLine').innerHTML = response[randPoem].lines[0];
             })
         })
@@ -153,7 +155,7 @@ function setTime() {
     document.getElementById('time').innerHTML = hours + ":" + minute + timeOfDay;
 }
 
-// triggerButton.addEventListener("click", searchWeather(currentZip))
+//triggerButton.addEventListener("click", searchWeather(currentZip))
 
 searchWeather(currentZip);
 //window.onload = setTime();
