@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@500;@700&display=swap');
+@import url(colors.css);
+
+h1, h2, h3, body {
+font-family: 'Chivo', sans-serif;
+font-style: normal;
+font-weight: normal;
+
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 44px;
+    color: var(--hotPink);
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--hotPink);
+}
+
+h3 {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--lightGray);
+}
+
+bodyDark {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--darkGray);
+}
+
+body {
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+}
